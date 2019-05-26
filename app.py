@@ -8,6 +8,7 @@ import logging
 from logging import Formatter, FileHandler
 from forms import *
 from lstm_code.Sentiment_lstm import lstm_predict, load_model
+from lstm_code.classify_mood import classify
 # heroku api
 
 
@@ -44,9 +45,21 @@ def login_required(test):
 #----------------------------------------------------------------------------#
 
 
-@app.route('/')
+
+@app.route('/', methods=["GET", "POST"])
 def home():
-    return render_template('pages/placeholder.home.html')
+    if request.method == 'POST':
+        sent = request.form['sentence'] if request.form['sentence'] != '' else "None"
+        model = load_model()
+        if sent == 'None':
+            return render_template('pages/index.html')
+        prob = float(lstm_predict(sent, model=model))
+        mood_class = classify(prob)
+        resp = {'sent': sent, 'mood_class': mood_class}
+        print(resp)
+        return render_template('pages/index.html', sent=sent, mood_class=mood_class)
+
+    return render_template('pages/index.html')
 
 @app.route('/api')
 @app.route('/api/<sent>')
@@ -108,6 +121,8 @@ if not app.debug:
 #----------------------------------------------------------------------------#
 # Launch.
 #----------------------------------------------------------------------------#
+
+
 
 # Default port:
 if __name__ == '__main__':
