@@ -8,7 +8,7 @@ import logging
 from logging import Formatter, FileHandler
 from forms import *
 from lstm_code.Sentiment_lstm import lstm_predict, load_model
-from lstm_code.classify_mood import classify
+from lstm_code.classify_mood import classify, mood_progress
 # heroku api
 
 
@@ -55,9 +55,8 @@ def home():
             return render_template('pages/index.html')
         prob = float(lstm_predict(sent, model=model))
         mood_class = classify(prob)
-        resp = {'sent': sent, 'mood_class': mood_class}
-        print(resp)
-        return render_template('pages/index.html', sent=sent, mood_class=mood_class)
+        progress = mood_progress(prob)
+        return render_template('pages/index.html', sent=sent, mood_class=mood_class, progress=progress)
 
     return render_template('pages/index.html')
 

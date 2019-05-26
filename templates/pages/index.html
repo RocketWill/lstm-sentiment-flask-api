@@ -94,7 +94,23 @@
                         </div>
                         {% else %}
                             <h3 style="font-weight: 300;"><span style="background: rgba(0,0,0,0.1); padding: 10px; font-size: 2.5rem; font-weight: 300; border-radius: 8px;">{{ sent }}</span> 的检测结果</h3>
-                            <h4> {{ mood_class }}</h4>
+                            {% if mood_class == 1 %}
+                                <img style="width: 40%; margin-top: 20px;" src="../../static/img/ultra_happy.png">
+                                <h4 style="margin-top: 20px;">Ultra Possitive</h4>
+                            {% elif mood_class == 2 %}
+                                <img style="width: 40%; margin-top: 20px;" src="../../static/img/happy.png">
+                                <h4 style="margin-top: 20px;">Possitive</h4>
+                            {% elif mood_class == 3 %}
+                                <img style="width: 40%; margin-top: 20px;" src="../../static/img/normal.png">
+                                <h4 style="margin-top: 20px;">Normal</h4>
+                            {% elif mood_class == 4 %}
+                                <img style="width: 40%; margin-top: 20px;" src="../../static/img/angry.png">
+                                <h4 style="margin-top: 20px;">Negative</h4>
+                            {% else %}
+                                <img style="width: 40%; margin-top: 20px;" src="../../static/img/ultra_angry.png">
+                                <h4 style="margin-top: 20px;">Ultra Negative</h4>
+                            {% endif %}
+                            <p id="el" style="color: #FF7D99; font-size: 6rem; font-weight: 700; text-shadow: 1px 1px 1px rgba(0,0,0,0.1);">0%</p>
                             <a href="/"><button class="main-btn" style="background: #164C72;">回首页</button></a>
                         {% endif %}
 
@@ -124,7 +140,7 @@
 
 					<!-- footer logo -->
 					<div class="footer-logo">
-						<a href="index.html"><img src="../../static/img/cat_logo.png" alt="logo"></a>
+						<a href="/"><img src="../../static/img/cat_logo.png" alt="logo"></a>
 					</div>
 					<!-- /footer logo -->
 
@@ -177,7 +193,32 @@
 	<script type="text/javascript" src="../../static/js/owl.carousel.min.js"></script>
 	<script type="text/javascript" src="../../static/js/jquery.magnific-popup.js"></script>
 	<script type="text/javascript" src="../../static/js/main.js"></script>
+    <script type="text/javascript" src="../../static/js/jquery-ui.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var el = $("#el"), value = {{ progress }};
+
+
+    $({percentage: 0}).stop(true).animate({percentage: value}, {
+        duration : 2000,
+        easing: "easeOutExpo",
+        step: function () {
+            // percentage with 1 decimal;
+            var percentageVal = Math.round(this.percentage * 10) / 10;
+
+            el.text(percentageVal + '%');
+        }
+    }).promise().done(function () {
+        // hard set the value after animation is done to be
+        // sure the value is correct
+        el.text(value + "%");
+    });
+        
+    });
+
+</script>
 
 </body>
+
 
 </html>

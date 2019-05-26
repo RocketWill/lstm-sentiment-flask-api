@@ -1,3 +1,4 @@
+import math
 def classify(prob):
     if prob >= 0.8:
         mood = 1
@@ -10,3 +11,6 @@ def classify(prob):
     else:
         mood = 5
     return mood
+
+def mood_progress(prob):
+    return math.floor(prob*100)
