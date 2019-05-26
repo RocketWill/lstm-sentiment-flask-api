@@ -8,6 +8,7 @@ import logging
 from logging import Formatter, FileHandler
 from forms import *
 from lstm_code.Sentiment_lstm import lstm_predict, load_model
+# heroku api
 
 
 #----------------------------------------------------------------------------#
