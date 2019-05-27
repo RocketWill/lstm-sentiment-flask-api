@@ -26,7 +26,9 @@
 	<link rel="stylesheet" href="../../static/css/font-awesome.min.css">
 
 	<!-- Custom stlylesheet -->
-	<link type="text/css" rel="stylesheet" href="../../static/css/style.css?v1.222" />
+	<link type="text/css" rel="stylesheet" href="../../static/css/style.css?v1.227" />
+    <link rel="shortcut icon" href="{{ url_for('static', filename='ico/favicon.png') }}">
+
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -36,7 +38,7 @@
 	<![endif]-->
 </head>
 
-<body>
+<body id="bg">
 	<!-- Header -->
 	<header id="home">
 		<!-- Background Image -->
@@ -93,7 +95,7 @@
                             </form>
                         </div>
                         {% else %}
-                            <h3 style="font-weight: 300;"><span style="background: rgba(0,0,0,0.1); padding: 10px; font-size: 2.5rem; font-weight: 300; border-radius: 8px;">{{ sent }}</span> 的检测结果</h3>
+                            <h3 style="font-weight: 300;"><span style="background: rgba(0,0,0,0.1); padding: 10px; font-size: 2rem; font-weight: 300; border-radius: 8px; line-height: 6rem;">{{ sent }}</span> 的检测结果</h3>
                             {% if mood_class == 1 %}
                                 <img style="width: 40%; margin-top: 20px;" src="../../static/img/ultra_happy.png">
                                 <h4 style="margin-top: 20px;">Ultra Possitive</h4>
@@ -194,10 +196,12 @@
 	<script type="text/javascript" src="../../static/js/jquery.magnific-popup.js"></script>
 	<script type="text/javascript" src="../../static/js/main.js"></script>
     <script type="text/javascript" src="../../static/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../static/js/p5.min.js"></script>
+    <script type="text/javascript" src="../../static/js/vanta.topology.min.js"></script>
+
 <script>
     $(document).ready(function () {
         var el = $("#el"), value = {{ progress }};
-
 
     $({percentage: 0}).stop(true).animate({percentage: value}, {
         duration : 2000,
@@ -215,7 +219,6 @@
     });
         
     });
-
 </script>
 
 </body>

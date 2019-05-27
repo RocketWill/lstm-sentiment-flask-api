@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a73c213a-3c32-493f-b6a5-b893e7d9856d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/static/css/jquery-ui.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/jquery-ui.theme.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/jquery-ui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/p5.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/vanta.topology.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lstm_code/classify_mood.py" beforeDir="false" afterPath="$PROJECT_DIR$/lstm_code/classify_mood.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lstm_code/Sentiment_lstm.py" beforeDir="false" afterPath="$PROJECT_DIR$/lstm_code/Sentiment_lstm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ico/favicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/ico/favicon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,7 +34,7 @@
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="206">
-              <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
+              <caret line="47" selection-start-line="47" selection-end-line="47" />
               <folding>
                 <element signature="e#169#227#0" expanded="true" />
               </folding>
@@ -43,19 +43,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Procfile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="13" selection-start-column="5" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lstm_code/Sentiment_lstm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="845">
-              <caret line="77" column="35" selection-start-line="77" selection-start-column="35" selection-end-line="77" selection-end-column="35" />
+            <state relative-caret-position="855">
+              <caret line="80" selection-start-line="80" selection-end-line="80" />
               <folding>
                 <element signature="e#25#36#0" expanded="true" />
               </folding>
@@ -66,8 +57,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/pages/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="112" column="93" selection-start-line="112" selection-start-column="93" selection-end-line="112" selection-end-column="93" />
+            <state relative-caret-position="168">
+              <caret line="97" column="127" selection-start-line="97" selection-start-column="127" selection-end-line="97" selection-end-column="127" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -75,7 +66,6 @@
                 <element signature="n#style#0;n#input#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#div#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#h3#0;n#div#0;n#div#0;n#div#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h4#0;n#div#0;n#div#0;n#div#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#1;n#div#0;n#div#0;n#div#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -86,6 +76,7 @@
                 <element signature="n#style#0;n#h4#3;n#div#0;n#div#0;n#div#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#4;n#div#0;n#div#0;n#div#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h4#4;n#div#0;n#div#0;n#div#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
@@ -95,15 +86,19 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4113">
-              <caret line="321" column="36" selection-start-line="321" selection-start-column="36" selection-end-line="321" selection-end-column="36" />
+            <state relative-caret-position="257">
+              <caret line="296" column="53" selection-start-line="296" selection-start-column="53" selection-end-line="296" selection-end-column="53" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lstm_model/lstm.yml">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -113,6 +108,7 @@
       <list>
         <option value="CSS File" />
         <option value="Python Script" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -123,6 +119,9 @@
       <find>home-content</find>
       <find>#1C1D21</find>
       <find>#nav.fixed-nav</find>
+      <find>@media</find>
+      <find>nav-collapse</find>
+      <find>navbar</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -132,13 +131,15 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/templates/pages/placeholder.home.html" />
-        <option value="$PROJECT_DIR$/lstm_code/Sentiment_lstm.py" />
         <option value="$PROJECT_DIR$/Procfile" />
         <option value="$PROJECT_DIR$/requirements.txt" />
-        <option value="$PROJECT_DIR$/static/css/style.css" />
         <option value="$PROJECT_DIR$/static/css/mystyle.css" />
         <option value="$PROJECT_DIR$/app.py" />
         <option value="$PROJECT_DIR$/lstm_code/classify_mood.py" />
+        <option value="$PROJECT_DIR$/lstm_code/Sentiment_lstm.py" />
+        <option value="$PROJECT_DIR$/static/js/p5.min.js" />
+        <option value="$PROJECT_DIR$/static/js/vanta.topology.min.js" />
+        <option value="$PROJECT_DIR$/static/css/style.css" />
         <option value="$PROJECT_DIR$/templates/pages/index.html" />
       </list>
     </option>
@@ -169,6 +170,11 @@
             <path>
               <item name="mlcatie" type="b2602c69:ProjectViewProjectNode" />
               <item name="mlcatie" type="462c0819:PsiDirectoryNode" />
+              <item name="lstm_model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mlcatie" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mlcatie" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -181,7 +187,7 @@
               <item name="mlcatie" type="b2602c69:ProjectViewProjectNode" />
               <item name="mlcatie" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="ico" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mlcatie" type="b2602c69:ProjectViewProjectNode" />
@@ -210,15 +216,15 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static/ico" />
       <recent name="$PROJECT_DIR$/static/js" />
       <recent name="$PROJECT_DIR$/static/img" />
       <recent name="$PROJECT_DIR$/static/css" />
       <recent name="$PROJECT_DIR$/static" />
-      <recent name="$PROJECT_DIR$/templates/pages" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/static/css" />
@@ -294,12 +300,12 @@
       <option name="presentableId" value="Default" />
       <updated>1558843221723</updated>
       <workItem from="1558843222982" duration="5906000" />
-      <workItem from="1558854166065" duration="9712000" />
+      <workItem from="1558854166065" duration="12425000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15618000" />
+    <option name="totallyTimeSpent" value="18331000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="57" y="58" width="1553" height="941" extended-state="0" />
@@ -319,7 +325,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32979977" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.1861013" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32979977" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -386,16 +392,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lstm_model/lstm.yml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4113">
-          <caret line="321" column="36" selection-start-line="321" selection-start-column="36" selection-end-line="321" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -416,17 +412,60 @@
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="206">
-          <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
+          <caret line="47" selection-start-line="47" selection-end-line="47" />
           <folding>
             <element signature="e#169#227#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lstm_model/lstm.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/vanta.topology.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="9533" selection-start-column="9533" selection-end-column="9533" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/p5.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="17061" selection-start-line="12" selection-start-column="17061" selection-end-line="12" selection-end-column="17061" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/ico/favicon.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/1x/画板 4.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/ico/favicon.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/ico/apple-touch-icon-57-precomposed.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="296" column="53" selection-start-line="296" selection-start-column="53" selection-end-line="296" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lstm_code/Sentiment_lstm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="845">
-          <caret line="77" column="35" selection-start-line="77" selection-start-column="35" selection-end-line="77" selection-end-column="35" />
+        <state relative-caret-position="855">
+          <caret line="80" selection-start-line="80" selection-end-line="80" />
           <folding>
             <element signature="e#25#36#0" expanded="true" />
           </folding>
@@ -435,8 +474,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/pages/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="112" column="93" selection-start-line="112" selection-start-column="93" selection-end-line="112" selection-end-column="93" />
+        <state relative-caret-position="168">
+          <caret line="97" column="127" selection-start-line="97" selection-start-column="127" selection-end-line="97" selection-end-column="127" />
           <folding>
             <element signature="n#style#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -444,7 +483,6 @@
             <element signature="n#style#0;n#input#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#div#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#h3#0;n#div#0;n#div#0;n#div#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h4#0;n#div#0;n#div#0;n#div#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#1;n#div#0;n#div#0;n#div#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -455,6 +493,7 @@
             <element signature="n#style#0;n#h4#3;n#div#0;n#div#0;n#div#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#4;n#div#0;n#div#0;n#div#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h4#4;n#div#0;n#div#0;n#div#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>

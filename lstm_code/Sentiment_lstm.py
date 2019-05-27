@@ -24,7 +24,6 @@ n_epoch = 4
 input_length = 100
 cpu_count = multiprocessing.cpu_count()
 
-
 #创建词语字典，并返回每个词语的索引，词向量，以及每个句子所对应的词语索引
 def create_dictionaries(model=None,
                         combined=None):
