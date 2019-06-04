@@ -9,7 +9,11 @@ from logging import Formatter, FileHandler
 from forms import *
 from lstm_code.Sentiment_lstm import lstm_predict, load_model
 from lstm_code.classify_mood import classify, mood_progress
+from flask_cors import CORS, cross_origin
+
 # heroku api
+
+
 
 
 #----------------------------------------------------------------------------#
@@ -18,6 +22,10 @@ from lstm_code.classify_mood import classify, mood_progress
 
 app = Flask(__name__)
 app.config.from_object('config')
+
+cors = CORS(app, resources={r"/api/*": {"origins": "http*m*l*c*a*t*i*e*"}})
+#cors = CORS(app, origins=['http://localhost:3000', "http*://*"])
+
 #model = load_model()
 #db = SQLAlchemy(app)
 
