@@ -56,7 +56,7 @@ Emotion indicator stored with the chat message
 
 The companion client provides authentication, public channels, direct messages, realtime updates, presence, typing indicators, theme preferences, and image attachments. Its Firebase-hosted interface remains available at [mlcatie-emotion-chatapp.firebaseapp.com](https://mlcatie-emotion-chatapp.firebaseapp.com/), although the historical Heroku sentiment endpoint is no longer online.
 
-## Historical API
+## API
 
 The original client called the following endpoint:
 
