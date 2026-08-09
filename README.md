@@ -1,286 +1,124 @@
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-
-## Welcome
-
-Hello. Want to get started with Flask quickly? Good. You came to the right place. This Flask application framework is pre-configured with **Flask-SQLAlchemy**, **Flask-WTF**, **Fabric**, **Coverage**, and the **Bootstrap** frontend (among others). This will get your Flask app up and running on Heroku or PythonAnywhere quickly. Use this starter, boilerplate for all you new Flask projects. Cheers!
-
-<hr>
-
-![real-python-logo](https://raw.githubusercontent.com/realpython/about/master/rp_small.png)
-
-**Designed for the [Real Python](http://www.realpython.com) course.**
-
-<hr>
-
-Preview the skeleton app here - [http://www.flaskboilerplate.com/](http://www.flaskboilerplate.com/)
-
-**EXAMPLE APP: [http://flasktaskr.herokuapp.com/](http://flasktaskr.herokuapp.com/)**
-
-**What is Flask?** Flask is a microframework for Python based on Werkzeug and Jinja2.
-
-Project Structure
---------
-
-  ```sh
-  ├── Procfile
-  ├── Procfile.dev
-  ├── README.md
-  ├── app.py
-  ├── config.py
-  ├── error.log
-  ├── forms.py
-  ├── models.py
-  ├── requirements.txt
-  ├── static
-  │   ├── css
-  │   │   ├── bootstrap-3.0.0.min.css
-  │   │   ├── bootstrap-theme-3.0.0.css
-  │   │   ├── bootstrap-theme-3.0.0.min.css
-  │   │   ├── font-awesome-3.2.1.min.css
-  │   │   ├── layout.forms.css
-  │   │   ├── layout.main.css
-  │   │   ├── main.css
-  │   │   ├── main.quickfix.css
-  │   │   └── main.responsive.css
-  │   ├── font
-  │   │   ├── FontAwesome.otf
-  │   │   ├── fontawesome-webfont.eot
-  │   │   ├── fontawesome-webfont.svg
-  │   │   ├── fontawesome-webfont.ttf
-  │   │   └── fontawesome-webfont.woff
-  │   ├── ico
-  │   │   ├── apple-touch-icon-114-precomposed.png
-  │   │   ├── apple-touch-icon-144-precomposed.png
-  │   │   ├── apple-touch-icon-57-precomposed.png
-  │   │   ├── apple-touch-icon-72-precomposed.png
-  │   │   └── favicon.png
-  │   ├── img
-  │   └── js
-  │       ├── libs
-  │       │   ├── bootstrap-3.0.0.min.js
-  │       │   ├── jquery-1.10.2.min.js
-  │       │   ├── modernizr-2.6.2.min.js
-  │       │   └── respond-1.3.0.min.js
-  │       ├── plugins.js
-  │       └── script.js
-  └── templates
-      ├── errors
-      │   ├── 404.html
-      │   └── 500.html
-      ├── forms
-      │   ├── forgot.html
-      │   ├── login.html
-      │   └── register.html
-      ├── layouts
-      │   ├── form.html
-      │   └── main.html
-      └── pages
-          ├── placeholder.about.html
-          └── placeholder.home.html
-  ```
-
-### Screenshots
-
-![Pages](https://github.com/realpython/flask-boilerplate/blob/master/screenshots/pages.png)
-
-![Forms](https://github.com/realpython/flask-boilerplate/blob/master/screenshots/forms.png)
-
-
-### Quick Start
-
-1. Clone the repo
-  ```
-  $ git clone https://github.com/realpython/flask-boilerplate.git
-  $ cd flask-boilerplate
-  ```
-
-2. Initialize and activate a virtualenv:
-  ```
-  $ virtualenv --no-site-packages env
-  $ source env/bin/activate
-  ```
+# Chinese LSTM Sentiment API
 
-3. Install the dependencies:
-  ```
-  $ pip install -r requirements.txt
-  ```
+A Flask API for binary Chinese sentiment classification, developed as the model-service component of [MLCatie Emotion Chat](https://github.com/RocketWill/MLCatie-emotion-chatapp). The original system connects a `jieba` and Word2Vec preprocessing pipeline to a Keras LSTM model, then presents the predicted sentiment probability inside a realtime React/Firebase chat application.
 
-5. Run the development server:
-  ```
-  $ python app.py
-  ```
+## Project origin and recognition
 
-6. Navigate to [http://localhost:5000](http://localhost:5000)
+MLCatie was developed as a team project in the 2019 Machine Learning course at Peking University's School of Software and Microelectronics. Under the Ministry of Education–Microsoft Industry-University Cooperative Education Program, the team was rated **Outstanding Team (优秀团队)** on 17 June 2019.
 
+This was a collective course-project honor rather than a placing in an external Microsoft competition. Will Cheng's contributions covered the sentiment model, Flask API, React/Firebase chat interface, and realtime presentation of emotion scores.
 
-Deploying to Heroku
-------
+## Demo
 
-1. Signup for [Heroku](https://api.heroku.com/signup)
-2. Login to Heroku and download the [Heroku Toolbelt](https://toolbelt.heroku.com/)
-3. Once installed, open your command-line and run the following command - `heroku login`. Then follow the prompts:
+![MLCatie sentiment API demo](docs/images/sentiment-api-demo.png)
 
-  ```
-  Enter your Heroku credentials.
-  Email: michael@mherman.org
-  Password (typing will be hidden):
-  Could not find an existing public key.
-  Would you like to generate one? [Yn]
-  Generating new SSH public key.
-  Uploading ssh public key /Users/michaelherman/.ssh/id_rsa.pub
-  ```
+*The original web demo accepts Chinese text and maps the model probability to one of five visual sentiment levels.*
 
-4. Activate your virtualenv
-5. Heroku recognizes the dependencies needed through a *requirements.txt* file. Create one using the following command: `pip freeze > requirements.txt`. Now, this will only create the dependencies from the libraries you installed using pip. If you used easy_install, you will need to add them directly to the file.
-6. Create a Procfile. Open up a text editor and save the following text in it:
+## Model pipeline
 
-  ```
-  web: gunicorn app:app --log-file=-
-  ```
+![Chinese sentiment inference pipeline](docs/architecture/model-pipeline.svg)
 
-   Then save the file in your applications root or main directory as *Procfile* (no extension). The word "web" indicates to Heroku that the application will be attached to the HTTP routing stack once deployed.
+The saved model uses:
 
-7. Create a local Git repository (if necessary):
+- `jieba` for Chinese word segmentation
+- A saved Word2Vec vocabulary for token-to-index mapping
+- Fixed-length sequences of up to 100 tokens
+- A 100-dimensional embedding layer
+- A 50-unit LSTM layer and 0.5 dropout
+- A sigmoid output representing positive-sentiment probability
 
-  ```
-  $ git init
-  $ git add .
-  $ git commit -m "initial files"
-  ```
+The five emotion levels shown in the UI are presentation bands over a binary model score; they are not five separately trained emotion classes.
 
-8. Create your app on Heroku:
+## Historical experiment results
 
-  ```
-  $ heroku create <name_it_if_you_want>
-  ```
+The original project presentation described an approximately 21,000-sample Chinese review corpus covering seven domains, with positive and negative examples divided into an 80/20 train/test split.
 
-9. Deploy your code to Heroku:
+| Model | Test accuracy reported in the 2019 presentation |
+| --- | ---: |
+| SVM baseline | 0.83 |
+| LSTM | 0.92 |
 
-  ```
-  $ git push heroku master
-  ```
+These values are retained as historical project results. The original dataset, its redistribution terms, and complete training logs are not included in this repository, so the figures have not been independently reproduced from the current checkout.
 
-10. View the app in your browser:
+## Role in MLCatie
 
-  ```
-  $ heroku open
-  ```
+```text
+React / Firebase chat client
+          │
+          │ Chinese message text
+          ▼
+Flask sentiment API
+          │
+          │ positive-sentiment probability
+          ▼
+Emotion indicator stored with the chat message
+```
 
-11. You app should look similar to this - [http://www.flaskboilerplate.com/](http://www.flaskboilerplate.com/)
+The companion client provides authentication, public channels, direct messages, realtime updates, presence, typing indicators, theme preferences, and image attachments. Its Firebase-hosted interface remains available at [mlcatie-emotion-chatapp.firebaseapp.com](https://mlcatie-emotion-chatapp.firebaseapp.com/), although the historical Heroku sentiment endpoint is no longer online.
 
-12. Having problems? Look at the Heroku error log:
+## Historical API
 
-  ```
-  $ heroku logs
-  ```
+The original client called the following endpoint:
 
-### Deploying to PythonAnywhere
+```http
+GET /api/<sentence>
+```
 
-1. Install [Git](http://git-scm.com/downloads) and [Python](http://install.python-guide.org/) - if you don't already have them, of course.
+Example response:
 
-  > If you plan on working exclusively within PythonAnywhere, which you can, because it provides a cloud solution for hosting and developing your application, you can skip step one entirely. :)
+```json
+{
+  "msg": "我今天很開心",
+  "prob": 0.92
+}
+```
 
-2. Sign up for [PythonAnywhere](https://www.pythonanywhere.com/pricing/), if you haven't already
-3. Once logged in, you should be on the Consoles tab.
-4. Clone this repo:
-  ```
-  $ git clone git://github.com/realpython/flask-boilerplate.git
-  $ cd flask-boilerplate
-  ```
+The root route also includes a small server-rendered interface for submitting a sentence and viewing its sentiment level.
 
-5. Create and activate a virtualenv:
-  ```
-  $ virtualenv venv --no-site-packages
-  $ source venv/bin/activate
-  ```
+## Repository contents
 
-6. Install requirements:
-  ```
-  $ pip install -r requirements.txt
-  ```
+```text
+app.py                         Flask routes and historical API
+lstm_code/Sentiment_lstm.py   Inference preprocessing and prediction
+lstm_code/classify_mood.py    Five-level UI mapping
+lstm_model/
+├── Word2vec_model.pkl        Saved Word2Vec model
+├── lstm.h5                   LSTM weights
+└── lstm.yml                  Serialized Keras architecture
+templates/                    Original server-rendered demo
+static/                       Demo styles and visual assets
+```
 
-7. Next, back on PythonAnywhere, click Web tab.
-8. Click the "Add a new web app" link on the left; by default this will create an app at your-username.pythonanywhere.com, though if you've signed up for a paid "Web Developer" account you can also specify your own domain name here. Once you've decided on the location of the app, click the "Next" button.
-9. On the next page, click the "Flask" option, and on the next page just keep the default settings and click "Next" again.
-Once the web app has been created (it'll take 20 seconds or so), you'll see a link near the top of the page, under the "Reload web app" button, saying "It is configured via a WSGI file stored at..." and a filename.  Click this, and you get to a page with a text editor.
-10. Put the following lines of code at the start of the WSGI file (changing "your-username" appropriately)
+The current repository preserves the deployed inference implementation and model assets. The original project directory also contained LSTM training and SVM baseline source code, but the training dataset and complete experiment artifacts are not part of this checkout.
 
-  ```
-  activate_this = '/home/your-username/flask-boilerplate/venv/bin/activate_this.py'
-  execfile(activate_this, dict(__file__=activate_this))
-  ```
+## Original technology stack
 
-11. Then update the following lines of code:
+- Python and Flask
+- TensorFlow 1.13.1 and Keras 2.2.4
+- Gensim Word2Vec
+- `jieba`
+- NumPy and Pandas
+- Gunicorn and Heroku for the historical deployment
 
-  from
+## Running the historical implementation
 
-  ```
-  project_home = u'/home/your-username/mysite'
-  ```
+The pinned dependencies reflect the 2019 environment and are not expected to install cleanly on a current Python runtime. With a compatible legacy environment:
 
-  to
+```bash
+pip install -r requirements.txt
+python app.py
+```
 
-  ```
-  project_home = u'/home/your-username/flask-boilerplate'
-  ```
+The service starts on `http://127.0.0.1:5000` by default. This repository preserves the original implementation; it is not presented as a current production API or a maintained reference architecture.
 
-  from
+## Current status
 
-  ```
-  from flask_app import app as application
-  ```
+- Model architecture, weights, and Word2Vec assets are preserved.
+- The Firebase-hosted chat interface remains accessible.
+- The original Heroku API deployment has been retired.
+- Historical metrics are documented from the project presentation, not reproduced from this checkout.
+- No runtime modernization is currently planned for this archived course project.
 
-  to
+## License
 
-  ```
-  from app import app as application
-  ```
-
-12. Save the file.
-13. Go to the website http://your-username.pythonanywhere.com/ (or your own domain if you specified a different one earlier), and you should see something like this - [http://www.flaskboilerplate.com/](http://www.flaskboilerplate.com/).
-
-*Now you're ready to start developing!*
-
-***Need to PUSH your PythonAnywhere repo to Github?***
-
-1. Start a bash console
-2. Run:
-
-  ```
-  $ ssh-keygen -t rsa
-  ```
-
-3. Just accept the defaults, then show the public key:
-
-  ```
-  $ cat ~/.ssh/id_rsa.pub
-  ```
-
-4. Log in to GitHub.
-5. Go to the "Account settings" option at the top right (currently a wrench and a screwdriver crossed)
-6. Select "SSH Keys" from the list at the left.
-7. Click the "Add SSH key" button at top right.
-8. Enter a title (I suggest something like "From PythonAnywhere" and then paste the output of the previous "cat" command into the Key box.
-9. Click the green "Add key" button.  You'll be prompted to enter your password.
-
-PUSH and PULL away!
-
-### What's next?
-
-1. Using Heroku? Make sure you deactivate your virtualenv once you're done deploying: `deactivate`
-2. Need to reactivate? (1) Unix - `source venv/bin/activate` (2) Windows - `venv\scripts\activate`
-4. Add your Google Analytics ID to the *main.html* file
-5. Add a domain name to [Heroku](https://devcenter.heroku.com/articles/custom-domains) or PythonAnywhere via a [CNAME](http://en.wikipedia.org/wiki/CNAME_record) record
-5. DEVELOP YOUR APP - need [help](http://realpython.com)?
-
-### Learn More
-
-1. [Getting Started with Python on Heroku](https://devcenter.heroku.com/articles/python)
-2. [PythonAnywhere - Help](https://www.pythonanywhere.com/help/)
-1. [Flask Documentation](http://flask.pocoo.org/docs/)
-2. [Flask Extensions](http://flask.pocoo.org/extensions/)
-1. [Real Python](http://www.realpythonfortheweb.com) :)
-
-# sentiment-lstm-flask-api
-# lstm-sentiment-flask-api
-# lstm-sentiment-flask-api
+This repository is licensed under the [Apache License 2.0](LICENSE).
